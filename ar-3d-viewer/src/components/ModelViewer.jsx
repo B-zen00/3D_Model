@@ -3,8 +3,6 @@ import "@google/model-viewer";
 export default function ModelViewer({ src }) {
   return (
     <div className="viewerWrap">
-      <div className="viewerHint">ลากหมุน • สองนิ้วซูม • กด AR บนมือถือ</div>
-
       <model-viewer
         src={src}
         camera-controls
