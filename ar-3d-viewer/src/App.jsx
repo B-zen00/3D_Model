@@ -5,8 +5,8 @@ import ModelPicker from "./components/ModelPicker.jsx";
 export default function App() {
   const models = useMemo(
     () => [
-      { name: "Sample 1", src: "/models/sample.glb" },
-      { name: "Sample 2", src: "/models/sample2.glb" },
+      { name: "Sample 1", src: `${import.meta.env.BASE_URL}models/3DModel.glb` }
+,
     ],
     []
   );
