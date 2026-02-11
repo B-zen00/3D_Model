@@ -18,7 +18,6 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <div className="title">3D Viewer</div>
-          <div className="subtitle">React + GLB</div>
         </div>
 
         <ModelPicker
