@@ -44,3 +44,16 @@ body { margin: 0; background: var(--bg); color: var(--text); font-family: system
   display: flex; align-items: center; justify-content: center;
   color: var(--muted);
 }
+
+.arBtn{
+  position:absolute;
+  left:16px;
+  bottom:16px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.55);
+  color:#fff;
+  backdrop-filter: blur(8px);
+  cursor:pointer;
+}
