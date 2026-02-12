@@ -125,3 +125,26 @@ body { margin: 0; background: var(--bg); color: var(--text); font-family: system
   text-decoration: none;
   backdrop-filter: blur(6px);
 }
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap:16px;
+  margin-top:20px;
+}
+
+.model-card{
+  background:#111;
+  border-radius:14px;
+  padding:20px;
+  text-align:center;
+  text-decoration:none;
+  color:#fff;
+  font-size:18px;
+  transition:.2s;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.model-card:hover{
+  transform:scale(1.05);
+  background:#1a1a1a;
+}

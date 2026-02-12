@@ -1,30 +1,27 @@
 import { Link } from "react-router-dom";
-
-// ดึงรายชื่อไฟล์ .glb ใน public/models
-const files = import.meta.glob("/public/models/*.glb");
+import { useEffect, useState } from "react";
 
 export default function ModelGallery() {
-  const list = Object.keys(files).map((p) => p.split("/").pop());
+  const [models, setModels] = useState([]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}models/models.json`)
+      .then(res => res.json())
+      .then(setModels);
+  }, []);
 
   return (
-    <div style={{ padding: 24 }}>
-      <h2 style={{ margin: "0 0 12px" }}>เลือกโมเดล</h2>
+    <div className="gallery">
+      <h1>เลือกโมเดล</h1>
 
-      <div style={{ display: "grid", gap: 10, maxWidth: 520 }}>
-        {list.map((name) => (
+      <div className="grid">
+        {models.map(m => (
           <Link
-            key={name}
-            to={`/viewer/${encodeURIComponent(name)}`}
-            style={{
-              textDecoration: "none",
-              border: "1px solid rgba(0,0,0,.15)",
-              borderRadius: 12,
-              padding: 12,
-              color: "#111",
-              background: "#fff",
-            }}
+            key={m.file}
+            to={`/viewer/${m.file}`}
+            className="model-card"
           >
-            {name}
+            {m.name}
           </Link>
         ))}
       </div>
