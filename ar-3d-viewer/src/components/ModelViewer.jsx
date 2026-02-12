@@ -16,10 +16,7 @@ export default function ModelViewer({ src }) {
         style={{ width: "100%", height: "100%" }}
         alt="3D model"
       >
-        {/* ปุ่ม AR สวยๆ */}
-        <button slot="ar-button" className="arBtn">
-          เปิด AR
-        </button>
+        <button slot="ar-button" className="arBtn">เปิด AR</button>
       </model-viewer>
     </div>
   );

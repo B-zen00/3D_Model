@@ -1,35 +1,12 @@
-import React, { useMemo, useState } from "react";
-import ModelViewer from "./components/ModelViewer.jsx";
-import ModelPicker from "./components/ModelPicker.jsx";
+import { Routes, Route } from "react-router-dom";
+import ModelGallery from "./pages/ModelGallery.jsx";
+import ViewerPage from "./pages/ViewerPage.jsx";
 
 export default function App() {
-  const models = useMemo(
-    () => [
-      { name: "Sample 1", src: `${import.meta.env.BASE_URL}models/3DModel.glb` }
-,
-    ],
-    []
-  );
-
-  const [activeSrc, setActiveSrc] = useState(models[0].src);
-
   return (
-    <div className="page">
-      <header className="topbar">
-        <div className="brand">
-          <div className="title">3D Viewer</div>
-        </div>
-
-        <ModelPicker
-          models={models}
-          value={activeSrc}
-          onChange={setActiveSrc}
-        />
-      </header>
-
-      <main className="content">
-        <ModelViewer src={activeSrc} />
-      </main>
-    </div>
+    <Routes>
+      <Route path="/" element={<ModelGallery />} />
+      <Route path="/viewer/:file" element={<ViewerPage />} />
+    </Routes>
   );
 }
